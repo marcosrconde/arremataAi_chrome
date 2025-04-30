@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arremata.ai</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <div id="loginSection">
+      <div class="logo-container">
+        <img src="images/Asset_12_ARREMATAAI.png" alt="Arremata.ai Logo" class="logo">
+      </div>
+      <form id="loginForm" class="auth-form">
+        <div class="form-group" id="emailFormGroup">
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group" id="passwordFormGroup">
+          <input type="password" id="password" placeholder="Senha" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="loginButton" class="primary-button">Entrar</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="authenticatedSection" style="display: none;">
+      <div class="header">
+        <img src="images/Asset_12_ARREMATAAI.png" alt="Arremata.ai Logo" class="header-logo">
+        <div class="header-button-group">
+          <button id="analyzePropertyBtn" class="secondary-button"><i class="fas fa-chart-bar"></i> Extrair os dados do imóvel desta página</button>
+          <button id="logoutBtnHeader" class="secondary-button"><i class="fas fa-sign-out-alt"></i> Sair</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="propertyFormSection" style="display: none;">
+      <!-- Property form content remains the same -->
+    </div>
+
+    <div id="confirmationSection" style="display: none;">
+      <div class="button-group">
+        <button id="confirmPropertyBtn" class="primary-button">Salvar imóvel na Carteira</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message Container -->
+  <div id="messageContainer" class="message" style="display: none;"></div>
+
+  <!-- Firebase SDKs are loaded via firebase-init.js, imported by background and popup scripts -->
+  
+  <!-- Application Scripts -->
+  <script type="module" src="src/js/popup.js"></script>
+</body>
+</html>

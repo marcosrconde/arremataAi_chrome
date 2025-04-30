@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Arremata.ai",
+  "version": "1.0",
+  "description": "Extensão para análise de imóveis em leilão",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "identity",
+    "alarms",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://n8n-n8n.apuc7z.easypanel.host/*",
+    "https://app.arremata.ai/*"
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "firebase.js",
+      "lib/*",
+      "src/js/*"
+    ],
+    "matches": ["<all_urls>"]
+  }],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "src/js/background.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://*.firebaseio.com https://*.googleapis.com https://firestore.googleapis.com https://identitytoolkit.googleapis.com https://n8n-n8n.apuc7z.easypanel.host https://app.arremata.ai 'self';"
+  }
+}
